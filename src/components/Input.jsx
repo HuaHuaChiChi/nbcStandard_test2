@@ -1,12 +1,25 @@
+import shortid from "shortid";
 import styled from "styled-components";
-
+import { addTodo } from "../redux/modules/todos";
+import { useDispatch } from "react-redux";
 
 const Input = () => {
+
+  const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const title = e,target.title.value
+    const title = e.target.title.value
+    const body = e.target.body.value
+
+    const newTodo = {
+      id : shortid(),
+      title,
+      body,
+      isDone : false
+    }
+    dispatch(addTodo(newTodo))
   }
 
   return (

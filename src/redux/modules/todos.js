@@ -27,7 +27,8 @@ const todos = (state = initialState, action) => {
       };
 
     case "DELETE_TODO":
-      return; //TODO: 여기 작성
+      const deleteTargetId = action.payload;
+      return;
 
     case "SWITCH_TODO":
       return; //TODO: 여기 작성
